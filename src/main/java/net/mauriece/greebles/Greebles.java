@@ -3,6 +3,7 @@ package net.mauriece.greebles;
 import net.mauriece.greebles.block.ModBlocks;
 import net.mauriece.greebles.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.neoforged.bus.api.Event;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -42,29 +43,30 @@ public class Greebles
         NeoForge.EVENT_BUS.register(this);
 
         //Register the ModItems class
-//        ModItems.register(modEventBus);
-//        ModBlocks.register(modEventBus);
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         // Register the item to a creative tab
-//        modEventBus.addListener(this::addCreative);
+        modEventBus.addListener(this::addCreative);
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
+
 
     private void commonSetup(final FMLCommonSetupEvent event) {
 
     }
 
     // Add the example block item to the building blocks tab
-//    private void addCreative(BuildCreativeModeTabContentsEvent event) {
-//        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-//            event.accept(ModItems.SLUDGE);
-//        }
-//
-//        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-//            event.accept(ModBlocks.SHAFT_COUPLER);
-//        }
-//    }
+    private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.SLUDGE);
+        }
+
+        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.RUST_STREAKS);
+        }
+    }
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {

@@ -1,0 +1,14 @@
+modLoader = "javafml"
+loaderVersion = "[2,)" # Requires JavaFML 2.0 or newer
+license = "MIT"
+
+[[mods]]
+modId = "greebles"
+version = "0.0.1"
+displayName = "Greebles"
+authors = "Mauriece"
+description = "A collection of various items and blocks to increase the variety of your builds."
+
+displayTest = "IGNORE_ALL_VERSION" # ✅ Ensures it's safe to load on dedicated servers
+
+# Optional mixins configuration (only if you're using mixins)
