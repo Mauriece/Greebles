@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "connected_up=false,connected_down=false": { "model": "greebles:block/rust_streaks" },
+    "connected_up=true,connected_down=false": { "model": "greebles:block/rust_streaks_bottom" },
+    "connected_up=false,connected_down=true": { "model": "greebles:block/rust_streaks_top" },
+    "connected_up=true,connected_down=true": { "model": "greebles:block/rust_streaks_mid" }
+  }
+}

@@ -2,6 +2,8 @@ package net.mauriece.greebles;
 
 import net.mauriece.greebles.block.ModBlocks;
 import net.mauriece.greebles.item.ModItems;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.bus.api.Event;
 import org.slf4j.Logger;
@@ -79,6 +81,7 @@ public class Greebles
     {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.RUST_STREAKS.get(), RenderType.translucent());
 
         }
     }

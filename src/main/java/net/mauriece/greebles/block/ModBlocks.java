@@ -18,11 +18,8 @@ public class ModBlocks {
 
     //Blocks
     public static final DeferredBlock<Block> RUST_STREAKS = registerBlock("rust_streaks",
-            () -> new Block(Block.Properties.of()
-                    .strength(1.4f)
-                    .requiresCorrectToolForDrops()
-                    .sound(SoundType.WOOD)
-            ));
+            RustStreaksBlock::new
+    );
 
 
 

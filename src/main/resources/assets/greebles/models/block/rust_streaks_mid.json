@@ -1,0 +1,6 @@
+{
+  "parent": "greebles:block/rust_streaks",
+  "textures": {
+    "0": "greebles:block/rust_streaks_mid",
+    "particle": "greebles:block/rust_streaks_mid"
+}}
